@@ -158,8 +158,8 @@ static GraphElem distGetMaxIndex(const ClusterLocalMap &clmap, const GraphWeight
         const GraphElem currComm, const GraphElem base, const GraphElem bound, const GraphWeight constant);
 
 static GraphWeight distBuildLocalMapCounter(const GraphElem e0, const GraphElem e1,
-        ClusterLocalMap &clmap, GraphWeightVector &counter, const Graph &g, const CommunityVector &currComm,
-        const VertexCommMap &remoteComm, const GraphElem vertex, const GraphElem base, const GraphElem bound);
+        std::unordered_map<GraphElem, GraphWeight> &clmap, const Graph &g, const CommunityVector &currComm,
+        const VertexCommMap &remoteComm, const GraphElem vertex, const GraphElem base, const GraphElem bound, const GraphElem cc, GraphWeight &ccVal);
 
 static GraphWeight distComputeModularity(const Graph &g, CommVector &localCinfo,
         const GraphWeightVector &clusterWeight, 
